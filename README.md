@@ -1,3 +1,99 @@
+# Inventario React
+
+Pequeña aplicación frontend para manejo de inventario creada con React y Vite.
+
+## Descripción
+
+Este proyecto es una interfaz básica para gestionar productos: crear, listar y autenticar usuarios. Está organizado con componentes reutilizables, contexto para estado global y servicios para llamadas a la API.
+
+## Tecnologías
+
+- Vite
+- React
+- React Router
+- Axios
+- react-hook-form
+- ESLint
+
+## Instalación
+
+1. Clona el repositorio.
+2. Instala dependencias:
+
+```bash
+npm install
+```
+
+3. Levanta el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+## Scripts
+
+- `dev`: inicia el servidor de desarrollo (vite).
+- `build`: construye la aplicación para producción.
+- `preview`: sirve la build localmente.
+- `lint`: ejecuta ESLint.
+
+Estos scripts están definidos en el `package.json`.
+
+## Estructura del proyecto
+
+Raíz del proyecto:
+
+```
+src/
+  App.jsx
+  main.jsx
+  assets/
+  components/
+    FormInput.jsx
+    Navbar.jsx
+    ProductCard.jsx
+  context/
+    AuthContext.jsx
+    ProductContext.jsx
+  hooks/
+    useProducts.js
+  pages/
+    CrearProducto.jsx
+    Home.jsx
+    Login.jsx
+    Productos.jsx
+    Register.jsx
+  services/
+    api.js
+  styles/
+    global.css
+public/
+vite.config.js
+package.json
+README.md
+```
+
+Breve descripción de carpetas clave:
+
+- `components/`: componentes UI reutilizables.
+- `context/`: proveedores de contexto para autenticación y productos.
+- `hooks/`: hooks personalizados (`useProducts`).
+- `pages/`: vistas principales de la app (Home, Login, Register, Productos, CrearProducto).
+- `services/`: cliente API con Axios (`api.js`).
+- `styles/`: estilos globales.
+
+## Uso
+
+- Registra un usuario desde la página de registro.
+- Inicia sesión para acceder a las rutas protegidas.
+- Crea y lista productos desde la interfaz.
+
+## Notas
+
+- Ajusta la URL base de la API en `src/services/api.js` según tu backend.
+- ESLint está configurado; ejecuta `npm run lint` para revisar el código.
+
+Si quieres que agregue instrucciones de despliegue o capturas de pantalla, dímelo y lo incluyo.
 # 🏪 Inventario React App
 
 Una aplicación moderna de gestión de inventario construida con React, que combina productos de una API externa con productos creados por el usuario.
