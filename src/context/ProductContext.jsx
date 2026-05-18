@@ -3,7 +3,6 @@ import { createContext, useState, useEffect } from "react";
 export const ProductContext = createContext();
 
 export function ProductProvider({ children }) {
-  const [carrito, setCarrito] = useState([]);
   const [productosCreados, setProductosCreados] = useState([]);
 
   // Cargar productos desde localStorage al iniciar
@@ -37,12 +36,7 @@ export function ProductProvider({ children }) {
   };
 
   return (
-    <ProductContext.Provider value={{
-      carrito,
-      setCarrito,
-      productosCreados,
-      agregarProducto
-    }}>
+    <ProductContext.Provider value={{ productosCreados, agregarProducto }}>
       {children}
     </ProductContext.Provider>
   );

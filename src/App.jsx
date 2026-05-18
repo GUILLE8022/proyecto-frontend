@@ -4,6 +4,7 @@ import Productos from "./pages/Productos";
 import CrearProducto from "./pages/CrearProducto";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { Navigate } from "react-router-dom";
@@ -26,6 +27,7 @@ function App() {
 
         {/* LOGIN */}
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         {/* RUTA PROTEGIDA */}
         <Route

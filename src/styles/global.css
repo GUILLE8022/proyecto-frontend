@@ -67,6 +67,30 @@ body {
   background-color: #34495e;
 }
 
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-username {
+  color: white;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.04);
+}
+
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -250,6 +274,40 @@ body {
   font-weight: bold;
   color: #27ae60;
 }
+
+/* BOTONES REUTILIZABLES */
+.home-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary { background-color: #3498db }
+.btn-primary:hover { background-color: #2d85c7 }
+.btn-success { background-color: #27ae60 }
+.btn-success:hover { background-color: #229954 }
+
+/* Pie en views de autenticación */
+.auth-footer {
+  text-align: center;
+  margin-top: 1rem;
+  color: #555;
+}
+
+.auth-footer a { color: #3498db; text-decoration: none }
+.auth-footer a:hover { text-decoration: underline }
 
 /* =========================
    FORMULARIO (CREAR PRODUCTO)

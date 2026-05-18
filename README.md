@@ -39,7 +39,8 @@ src/
 ├── pages/
 │   ├── Home.jsx            # Página de inicio
 │   ├── Productos.jsx       # Lista de productos con búsqueda
-│   └── CrearProducto.jsx   # Formulario de creación
+│   ├── CrearProducto.jsx   # Formulario de creación
+│   └── Register.jsx        # Vista de registro de usuarios (nuevo)
 ├── services/
 │   └── api.js              # Servicios de API
 └── styles/

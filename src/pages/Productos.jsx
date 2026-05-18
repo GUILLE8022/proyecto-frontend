@@ -3,7 +3,7 @@ import { useProducts } from "../hooks/useProducts";
 import ProductCard from "../components/ProductCard";
 
 function Productos() {
-  const { productos, loading } = useProducts();
+  const { productos, loading, error } = useProducts();
   const [busqueda, setBusqueda] = useState("");
 
   // Filtrar productos en tiempo real usando useMemo para optimización
@@ -17,6 +17,10 @@ function Productos() {
 
   if (loading) {
     return <div className="loading">Cargando productos...</div>;
+  }
+
+  if (error) {
+    return <div className="loading">{error}</div>;
   }
 
   return (

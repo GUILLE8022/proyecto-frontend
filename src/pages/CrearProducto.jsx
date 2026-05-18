@@ -12,13 +12,22 @@ function CrearProducto() {
 
   const onSubmit = (data) => {
     const precio = parseFloat(data.precio);
-    if (isNaN(precio) || precio <= 0) {
-      setFeedback("El precio debe ser un número positivo");
+    if (isNaN(precio) || precio < 0) {
+      setFeedback("El precio debe ser un número válido y no puede ser negativo");
+      return;
+    }
+
+    // Trim nombre y descripción
+    const nombre = data.nombre.trim();
+    const descripcion = data.descripcion.trim();
+
+    if (!nombre) {
+      setFeedback("El nombre no puede estar vacío o contener solo espacios");
       return;
     }
 
     // Agregar producto al contexto
-    agregarProducto({ ...data, precio });
+    agregarProducto({ ...data, precio, nombre, descripcion });
 
     // Limpiar formulario
     reset();
@@ -29,7 +38,7 @@ function CrearProducto() {
     // Redirigir después de un breve delay para mostrar el feedback
     setTimeout(() => {
       navigate("/productos");
-    }, 1500);
+    }, 1200);
   };
 
   return (
@@ -44,7 +53,8 @@ function CrearProducto() {
           errors={errors}
           validation={{
             required: "El nombre es obligatorio",
-            minLength: { value: 2, message: "El nombre debe tener al menos 2 caracteres" }
+            minLength: { value: 2, message: "El nombre debe tener al menos 2 caracteres" },
+            validate: (v) => v.trim().length > 0 || "El nombre no puede ser solo espacios"
           }}
         />
         <FormInput
@@ -57,7 +67,17 @@ function CrearProducto() {
           errors={errors}
           validation={{
             required: "El precio es obligatorio",
-            min: { value: 0.01, message: "El precio debe ser mayor a 0" }
+            min: { value: 0, message: "El precio no puede ser negativo" }
+          }}
+        />
+        <FormInput
+          label="Descripción"
+          name="descripcion"
+          register={register}
+          errors={errors}
+          validation={{
+            required: "La descripción es obligatoria",
+            minLength: { value: 10, message: "La descripción debe tener al menos 10 caracteres" }
           }}
         />
         <button type="submit" className="submit-btn">Guardar Producto</button>

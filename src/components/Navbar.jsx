@@ -28,15 +28,18 @@ const Navbar = () => {
           </Link>
 
           {!user ? (
-            <Link to="/login" className="navbar-link">
-              Login
-            </Link>
+            <>
+              <Link to="/login" className="navbar-link">
+                Login
+              </Link>
+              <Link to="/register" className="navbar-link">
+                Registrar
+              </Link>
+            </>
           ) : (
-            <div style={{ color: "white" }}>
-              Hola, {user.nombre}
-              <button onClick={logout} style={{ marginLeft: "10px" }}>
-                Salir
-              </button>
+            <div className="navbar-user">
+              <span className="navbar-username">Hola, {user.nombre}</span>
+              <button onClick={logout} className="logout-btn">Salir</button>
             </div>
           )}
         </div>
